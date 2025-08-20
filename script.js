@@ -8,7 +8,7 @@ const products = [
   { id: 4, name: "Product 4", price: 40 },
   { id: 5, name: "Product 5", price: 50 },
 ];
-const savedShoppingCart = JSON.parse(sessionStorage.getItem("Cart")) || [];
+const savedShoppingCart = JSON.parse(sessionStorage.getItem("cart")) || [];
 const shoppingCart = [...savedShoppingCart];
 
 const productList = document.getElementById("product-list");
@@ -61,7 +61,7 @@ function renderProducts() {
 // Add item to cart
 function addToCart(productId) {
 	 shoppingCart.push(products[productId - 1]);
-    sessionStorage.setItem("Cart", JSON.stringify(shoppingCart));
+    sessionStorage.setItem("cart", JSON.stringify(shoppingCart));
     renderCart();
 }
 
